@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astrology-lib"
+version = "1.0.0"
+description = "A Python library for calculating astrological charts using Kerykeion"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "AGPL-3.0"}
+authors = [
+    {name = "Astrology Library Contributors"}
+]
+keywords = ["astrology", "chart", "birth-chart", "synastry", "transit", "composite"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "pytz>=2023.3",
+    "kerykeion>=4.0.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0.0",
+    "pytest>=7.0.0",
+    "mypy>=1.0.0",
+    "httpx>=0.24.0",
+    "types-requests>=2.31.0",
+]
+
+[tool.setuptools]
+packages = ["astrology_lib"]
+
+[tool.setuptools.package-data]
+"*" = ["*.toml", "*.json"]
+
+[tool.black]
+line-length = 200
+
+[tool.mypy]
+ignore_missing_imports = true
+

@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pydantic = "*"
+pydantic-settings = "*"
+types-pytz = "*"
+pytz = "*"
+kerykeion = "*"
+requests = "*"
+
+[dev-packages]
+black = "*"
+pytest = "*"
+mypy = "*"
+httpx = "*"
+types-requests = "*"
+
+[requires]
+python_version = "3.11"
+
+[scripts]
+test = "pytest -v"
+test-verbose = "pytest -vv"
+quality = "python -m mypy --ignore-missing-imports ."
+format = "black . --line-length 200"
